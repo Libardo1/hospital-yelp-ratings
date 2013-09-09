@@ -2,6 +2,6 @@ Yelp Ratings of CA Hospitals
 =====================
 
 To do:
-- compare Yelp ratings to HCAHPs scores
-- clean up Ruby script
-- separate charts from processing in R
+- Match hospital Yelp ratings to HCAHPs scores
+- clean Ruby script
+- separate charts code from data processing/cleaning code in R
