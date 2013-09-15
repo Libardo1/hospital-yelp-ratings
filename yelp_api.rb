@@ -21,7 +21,7 @@ for i in 0..2652 do
 	path = "/v2/search?location=" + zip + "&category_filter=hospitals"
 	parsed = JSON.parse(access_token.get(path).body)
 	parsed["businesses"].each do |hosp|
-		CSV.open("/Users/jsemer/Dropbox/yelp/test/" + zip + ".csv", "ab") do |csv|
+		CSV.open("/Users/jsemer/Dropbox/yelp/data/" + zip + ".csv", "ab") do |csv|
 		 	csv << [ hosp['id'], 
 				 hosp['is_claimed'], 
 				 hosp['is_closed'], 
