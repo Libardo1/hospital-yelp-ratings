@@ -27,7 +27,7 @@ for i in 0..2652 do
 				 hosp['is_closed'], 
 				 hosp['name'], 
 				 hosp['review_count'], 
-				 hosp['categories'].shift.shift,
+				 hosp['categories'][1] == nil ? 'NA': hosp['categories'][1].shift,
 				 hosp['rating'], 
 				 hosp['snippet_text'], 
 				 hosp['location']['address'][0],
