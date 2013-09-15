@@ -23,20 +23,20 @@ dph <- c("highland-hospital", "contra", "kern", "natividad", "ucla", "riverside-
          "santa-clara-valley", "san-mateo-medical-center", "lac-usc", "olive-view", 
          "rancho-los", "san-francisco-general", "san-joaquin-general", "alameda-count",
          "ucsf", "uc-davis", "uci-", "uc-san-diego", "ucsd", "ventura-county")
-dph <- df[grepl(paste(dph, collapse="|"), df$name),]
-dph <- dph[order(dph$disp_name),]
+dph <- df[grepl(paste(dph, collapse="|"), df$id),]
+dph <- dph[order(dph$name),]
 
-ggplot(dph[dph$count > 15,], aes(y = rating, x = reorder(name, rating))) + 
+ggplot(dph[dph$count > 15,], aes(y = rating, x = reorder(id, rating))) + 
   geom_bar(stat = 'identity') + 
   coord_flip() + 
   ggtitle("DPH Yelp Ratings as of 9/8/2013\nScale: 0-5, includes only DPHs with > 15 reviews\n") + 
   xlab(NULL) + 
   scale_y_discrete(limits = 1:5)
 
-#sub <- df[grepl('kaiser', df$name),]
-sub <- df[grepl('^uc|ucla', df$name),]
+#sub <- df[grepl('kaiser', df$id),]
+sub <- df[grepl('^uc|ucla', df$id),]
 
-ggplot(sub, aes(y = rating, x = reorder(name, rating))) + 
+ggplot(sub, aes(y = rating, x = reorder(id, rating))) + 
   geom_bar(stat = 'identity') + 
   coord_flip()
 
