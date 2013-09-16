@@ -9,7 +9,7 @@ col <- c('id', 'is_claimed', 'is_closed', 'name', 'count', 'categories', 'rating
          'snippet_text', 'address_1', 'address_2', 'city', 'state', 'zip')
 colnames(df) <- col
 
-df <- df[(!duplicated(df$name) & df$state == "CA"),]
+df <- df[(!duplicated(df$id) & df$state == "CA"),]
 
 ggplot(df, aes(x = count)) + geom_histogram(binwidth = 5)
 
