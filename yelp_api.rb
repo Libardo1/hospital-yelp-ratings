@@ -16,7 +16,7 @@ access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 zip = []
 path = []
 
-for i in 0..2652 do
+for i in 0..2653 do
 	zip = CSV.read('/Users/jsemer/Dropbox/yelp/ca_zip.csv')[i][0]
 	path = "/v2/search?location=" + zip + "&category_filter=hospitals"
 	parsed = JSON.parse(access_token.get(path).body)
