@@ -16,7 +16,7 @@ ggplot(df, aes(x = count)) + geom_histogram(binwidth = 5)
 df10 <- df[df$count >= 10,]
 df10$cut <- with(df10, cut(count, breaks = quantile(df10$count, probs = seq(0, 1, .25)), 
                            include.lowest = TRUE))
-table(df10$cut, useNA = "ifany")
+table(df10$categories, useNA = "ifany")
 ggplot(df10, aes(x = rating, color = cut)) + geom_density()
 
 dph <- c("highland-hospital", "contra", "kern", "natividad", "ucla", "riverside-county", 
